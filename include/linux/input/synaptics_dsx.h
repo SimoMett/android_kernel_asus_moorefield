@@ -60,6 +60,7 @@ struct synaptics_dsx_board_data {
 	bool y_flip;
 	bool swap_axes;
 	int irq_gpio;
+    int irq;
 	int power_gpio;
 	int power_on_state;
 	int reset_gpio;
