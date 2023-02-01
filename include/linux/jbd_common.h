@@ -2,6 +2,7 @@
 #define _LINUX_JBD_STATE_H
 
 #include <linux/bit_spinlock.h>
+#include "jbd2.h"
 
 static inline struct buffer_head *jh2bh(struct journal_head *jh)
 {
