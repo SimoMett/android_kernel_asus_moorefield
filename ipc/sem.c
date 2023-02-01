@@ -252,6 +252,14 @@ static void sem_rcu_free(struct rcu_head *head)
 	ipc_rcu_free(head);
 }
 
+static void inline sem_wait_array(struct sem_array *sma)
+{
+    for (int i = 0; i < sma->sem_nsems; i++) {
+        struct sem *sem = sma->sem_base + i;
+        spin_unlock_wait(&sem->lock);
+    }
+}
+
 /*
  * If the request contains only one semaphore operation, and there are
  * no complex transactions pending, lock only the semaphore involved.
