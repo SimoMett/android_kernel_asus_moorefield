@@ -13,10 +13,11 @@ enum jbd_state_bits {
     BH_JBDDirty,		/* Is dirty but journaled */
     BH_State,		/* Pins most journal_head state */
     BH_JournalHead,		/* Pins bh->b_private and jh->b_bh */
-    BH_Shadow,		/* IO on shadow buffer is running */
+    BH_Unshadow,		/* IO on shadow buffer is running */
     BH_Verified,		/* Metadata block has been verified ok */
     BH_JBDPrivateStart,	/* First bit available for private use by FS */
 };
+#define BH_Shadow BH_Unshadow
 
 static inline struct buffer_head *jh2bh(struct journal_head *jh)
 {
