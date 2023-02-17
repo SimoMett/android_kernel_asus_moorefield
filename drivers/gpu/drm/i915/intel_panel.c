@@ -682,7 +682,7 @@ void intel_panel_disable_backlight(struct drm_device *dev)
 
 	spin_unlock_irqrestore(&dev_priv->backlight.lock, flags);
 }
-#ifdef CONFIG_CRYSTAL_COVE
+
 static void scheduled_led_chip_programming(struct work_struct *work)
 {
 	lp855x_ext_write_byte(LP8556_CFG9,
@@ -703,7 +703,6 @@ static void scheduled_led_chip_programming(struct work_struct *work)
 	lp855x_ext_write_byte(LP8556_LEDSTREN,
 			LP8556_5LEDSTR);
 }
-#endif
 
 static uint32_t compute_pwm_base(uint16_t freq)
 {
