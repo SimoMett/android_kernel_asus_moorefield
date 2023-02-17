@@ -34,6 +34,7 @@
 #include <linux/module.h>
 #include <drm/i915_powerwell.h>
 #include "psb_powermgmt.h"
+#include "../../../external_drivers/intel_media/common/psb_powermgmt.h"
 #include <linux/early_suspend_sysfs.h>
 
 static struct drm_device *gdev;
